@@ -3,11 +3,11 @@ import "./Thermometer.css";
 import { useClimate } from "../../context/ClimateContext";
 
 function Thermometer() {
-  const { temperature, setTemperature } = useClimate();
+  const { temperature, setTemperature, actualTemp } = useClimate();
   return (
     <section>
       <h2>Thermometer</h2>
-      <div className="actual-temp">Actual Temperature: {temperature}°F</div>
+      <div className="actual-temp">Actual Temperature: {actualTemp}°F</div>
       <ReactSlider
         value={temperature}
         onAfterChange={(val) => {
